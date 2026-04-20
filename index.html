@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Make Your Mark | Premium Image & Soft Skills Consulting</title>
+    <meta
+      name="description"
+      content="Premium image consulting and soft skills coaching by Jyotika. Elevate confidence, communication, and executive presence."
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["Playfair Display", "serif"]
+            },
+            colors: {
+              gold: {
+                DEFAULT: "#C5A059",
+                dark: "#A68444",
+                light: "#E2C281"
+              },
+              base: {
+                950: "#050505",
+                900: "#111111",
+                800: "#1A1A1A",
+                100: "#FDFBF7",
+                50: "#FFFFFF"
+              }
+            },
+            letterSpacing: {
+              widest: ".25em"
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      .text-balance {
+        text-wrap: balance;
+      }
+
+      .reveal-line::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: currentColor;
+        transition: width 0.3s ease;
+      }
+
+      .group:hover .reveal-line::after {
+        width: 100%;
+      }
+
+      .bg-noise {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+      }
+
+      .marquee {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .marquee::before,
+      .marquee::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 84px;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .marquee::before {
+        left: 0;
+        background: linear-gradient(90deg, #050505 0%, rgba(5, 5, 5, 0) 100%);
+      }
+
+      .marquee::after {
+        right: 0;
+        background: linear-gradient(270deg, #050505 0%, rgba(5, 5, 5, 0) 100%);
+      }
+
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        gap: 1rem;
+        animation: marquee-left 75s linear infinite;
+      }
+
+      .marquee-track.reverse {
+        animation: marquee-right 82s linear infinite;
+      }
+
+      .marquee:hover .marquee-track {
+        animation-play-state: paused;
+      }
+
+      @keyframes marquee-left {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      @keyframes marquee-right {
+        from {
+          transform: translateX(-50%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-base-950 text-base-100 antialiased selection:bg-gold selection:text-base-950">
+    <nav class="fixed top-0 z-50 w-full border-b border-white/5 bg-base-950/80 backdrop-blur-md">
+      <div class="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 md:px-12">
+        <a href="#" class="flex items-center gap-3">
+          <img
+            src="assets/logo.png"
+            alt="Make Your Mark logo"
+            class="h-14 w-auto max-w-[220px] shrink-0 object-contain"
+            loading="eager"
+          />
+          <span class="font-serif text-2xl tracking-wide text-white">Make Your Mark</span>
+        </a>
+
+        <div class="hidden items-center space-x-12 md:flex" id="siteNav">
+          <a href="#philosophy" class="group relative text-sm uppercase tracking-widest text-white/70 transition-colors hover:text-white">
+            Philosophy
+            <span class="reveal-line"></span>
+          </a>
+          <a href="#services" class="group relative text-sm uppercase tracking-widest text-white/70 transition-colors hover:text-white">
+            Services
+            <span class="reveal-line"></span>
+          </a>
+          <a href="#testimonials" class="group relative text-sm uppercase tracking-widest text-white/70 transition-colors hover:text-white">
+            Clients
+            <span class="reveal-line"></span>
+          </a>
+          <a href="https://wa.me/919810241116?text=Hello%20Jyotika%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer" class="border border-gold px-6 py-3 text-xs uppercase tracking-widest text-gold transition-all duration-300 hover:bg-gold hover:text-base-950">
+            Book Consultation
+          </a>
+        </div>
+
+        <button
+          class="p-2 text-white md:hidden"
+          id="menuToggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="hidden border-t border-white/10 bg-base-950 px-6 pb-6 pt-4 md:hidden">
+        <div class="flex flex-col gap-4">
+          <a href="#philosophy" class="text-sm uppercase tracking-widest text-white/80">Philosophy</a>
+          <a href="#services" class="text-sm uppercase tracking-widest text-white/80">Services</a>
+          <a href="#testimonials" class="text-sm uppercase tracking-widest text-white/80">Clients</a>
+          <a href="https://wa.me/919810241116?text=Hello%20Jyotika%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer" class="mt-1 border border-gold px-4 py-3 text-center text-xs uppercase tracking-widest text-gold">
+            Book Consultation
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="relative flex min-h-screen items-center overflow-hidden bg-noise pt-24">
+      <div class="absolute inset-0 z-0 flex">
+        <div class="h-full w-1/2 bg-base-950"></div>
+        <div class="relative h-full w-1/2 bg-base-900">
+          <div class="absolute inset-0 bg-base-800 mix-blend-overlay"></div>
+        </div>
+      </div>
+
+      <div class="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 px-6 md:grid-cols-2 md:px-12">
+        <div class="max-w-xl">
+          <div class="mb-8 flex items-center gap-4">
+            <div class="h-px w-12 bg-gold"></div>
+            <span class="text-xs font-medium uppercase tracking-widest text-gold">Personal Transformation</span>
+          </div>
+          <h1 class="text-balance mb-8 font-serif text-5xl leading-[1.1] md:text-7xl">
+            Elevate Your <br />
+            <span class="italic text-white/90">Presence.</span><br />
+            Command The Room.
+          </h1>
+          <p class="mb-12 max-w-md text-lg font-light leading-relaxed text-white/60 md:text-xl">
+            Bespoke image consulting and soft skills coaching for leaders, professionals, and
+            those ready to make an unforgettable mark.
+          </p>
+          <div class="flex flex-col gap-6 sm:flex-row">
+            <a href="#services" class="bg-gold px-8 py-4 text-center text-xs font-semibold uppercase tracking-widest text-base-950 transition-colors duration-300 hover:bg-white">
+              Begin Journey
+            </a>
+            <a href="#philosophy" class="group flex items-center justify-center gap-3 px-8 py-4 text-center text-xs font-semibold uppercase tracking-widest text-white">
+              Our Philosophy
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="relative ml-auto hidden w-full max-w-md md:block">
+          <div class="border-2 border-gold/35 p-4 shadow-2xl shadow-black/40">
+            <div class="overflow-hidden border border-white/10 bg-base-800 p-3">
+              <img
+                src="assets/jyotika-portrait.png"
+                alt="Jyotika Singhal portrait"
+                class="h-[520px] w-full object-cover object-top opacity-90"
+                loading="eager"
+              />
+            </div>
+            <div class="pt-5 text-center">
+              <p class="font-serif text-2xl tracking-wide text-base-100">Jyotika Singhal</p>
+              <p class="mt-1 text-[11px] uppercase tracking-[0.22em] text-gold/80">Image Consultant and Soft Skills Trainer</p>
+            </div>
+          </div>
+          <div class="absolute -inset-3 -z-10 border border-gold/25"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="philosophy" class="bg-base-100 py-32 text-base-950">
+      <div class="mx-auto max-w-4xl px-6 text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-12 text-gold opacity-50">
+          <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1.5.5 1.5 1.5L5 21h-2z"></path>
+          <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1.5.5 1.5 1.5L17 21h-2z"></path>
+        </svg>
+        <h2 class="text-balance mb-8 font-serif text-3xl leading-tight md:text-5xl">
+          "True influence is harmony — an alignment of how you think, how you speak, and how you
+          are perceived."
+        </h2>
+        <p class="text-sm font-medium uppercase tracking-widest text-base-950/60">
+          — Make Your Mark Philosophy
+        </p>
+      </div>
+    </section>
+
+    <section id="services" class="relative border-t border-white/5 bg-base-950 py-32">
+      <div class="mx-auto max-w-7xl px-6 md:px-12">
+        <div class="mb-24 flex flex-col items-end justify-between gap-8 md:flex-row">
+          <div>
+            <div class="mb-6 flex items-center gap-4">
+              <div class="h-px w-12 bg-gold"></div>
+              <span class="text-xs font-medium uppercase tracking-widest text-gold">Areas of Expertise</span>
+            </div>
+            <h2 class="font-serif text-4xl text-white md:text-6xl">Our Services</h2>
+          </div>
+          <p class="max-w-md pb-2 text-lg font-light text-white/50">
+            A holistic approach to personal branding, bridging the gap between external presentation
+            and internal capability.
+          </p>
+        </div>
+
+        <div class="grid gap-12 md:grid-cols-2 lg:gap-24">
+          <div class="group cursor-pointer">
+            <div class="relative mb-8 w-full overflow-hidden bg-base-900 aspect-[4/5]">
+              <img
+                src="assets/service-image-consulting.jpeg"
+                alt="Image consulting and personal styling session"
+                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div class="absolute left-6 top-6 z-10 flex h-12 w-12 items-center justify-center border border-white/10 bg-base-950 font-serif text-xl text-gold">
+                01
+              </div>
+            </div>
+            <h3 class="mb-4 font-serif text-3xl text-white transition-colors group-hover:text-gold">
+              Image Consulting
+            </h3>
+            <p class="mb-8 font-light leading-relaxed text-white/60">
+              Curating a visual identity that speaks before you do. We align your wardrobe, grooming,
+              and styling with your professional aspirations and personal brand.
+            </p>
+            <ul class="mb-8 space-y-4 border-t border-white/10 pt-8">
+              <li class="flex items-center text-sm text-white/80">
+                <svg class="mr-4 h-4 w-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                Wardrobe Auditing and Strategy
+              </li>
+              <li class="flex items-center text-sm text-white/80">
+                <svg class="mr-4 h-4 w-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                Personal Shopping and Styling
+              </li>
+              <li class="flex items-center text-sm text-white/80">
+                <svg class="mr-4 h-4 w-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                Grooming and Posture Refinement
+              </li>
+            </ul>
+            <a href="#booking" class="inline-flex items-center text-xs uppercase tracking-widest text-white transition-colors hover:text-gold">
+              Explore Image Consulting
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <div class="group cursor-pointer md:mt-24">
+            <div class="relative mb-8 w-full overflow-hidden bg-base-900 aspect-[4/3]">
+              <img
+                src="assets/service-soft-skills.jpeg"
+                alt="Soft skills and communication workshop"
+                class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div class="absolute left-6 top-6 z-10 flex h-12 w-12 items-center justify-center border border-white/10 bg-base-950 font-serif text-xl text-gold">
+                02
+              </div>
+            </div>
+            <h3 class="mb-4 font-serif text-3xl text-white transition-colors group-hover:text-gold">
+              Soft Skills Mastery
+            </h3>
+            <p class="mb-8 font-light leading-relaxed text-white/60">
+              Cultivating executive presence and emotional intelligence. We train you to communicate
+              with clarity, navigate complexity, and lead with confidence.
+            </p>
+            <ul class="mb-8 space-y-4 border-t border-white/10 pt-8">
+              <li class="flex items-center text-sm text-white/80">
+                <svg class="mr-4 h-4 w-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                Executive Communication
+              </li>
+              <li class="flex items-center text-sm text-white/80">
+                <svg class="mr-4 h-4 w-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                Emotional Intelligence and Empathy
+              </li>
+              <li class="flex items-center text-sm text-white/80">
+                <svg class="mr-4 h-4 w-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                Public Speaking and Presentations
+              </li>
+            </ul>
+            <a href="#booking" class="inline-flex items-center text-xs uppercase tracking-widest text-white transition-colors hover:text-gold">
+              Explore Soft Skills
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-t border-white/5 bg-base-900 py-32">
+      <div class="mx-auto max-w-7xl px-6 md:px-12">
+        <div class="mb-20 text-center">
+          <h2 class="mb-6 font-serif text-3xl text-white md:text-4xl">The Methodology</h2>
+          <p class="mx-auto max-w-2xl font-light text-white/50">
+            A refined three-step process tailored to your goals, ensuring transformation that is
+            practical, visible, and sustainable.
+          </p>
+        </div>
+
+        <div class="relative grid gap-8 md:grid-cols-3">
+          <div class="absolute left-[10%] right-[10%] top-12 z-0 hidden h-px bg-white/10 md:block"></div>
+
+          <div class="relative z-10 border border-white/5 bg-base-950 p-10 transition-colors hover:border-gold/30">
+            <div class="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-full border border-white/5 bg-base-900 font-serif text-2xl text-gold md:mx-0">
+              I
+            </div>
+            <h4 class="mb-4 text-center font-serif text-xl text-white md:text-left">Discovery and Audit</h4>
+            <p class="text-center text-sm font-light leading-relaxed text-white/50 md:text-left">
+              We begin with an in-depth analysis of your current image, communication style, and
+              professional goals to identify key opportunities.
+            </p>
+          </div>
+
+          <div class="relative z-10 border border-white/5 bg-base-950 p-10 transition-colors hover:border-gold/30">
+            <div class="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-full border border-white/5 bg-base-900 font-serif text-2xl text-gold md:mx-0">
+              II
+            </div>
+            <h4 class="mb-4 text-center font-serif text-xl text-white md:text-left">Strategic Blueprint</h4>
+            <p class="text-center text-sm font-light leading-relaxed text-white/50 md:text-left">
+              We build a bespoke roadmap that aligns your visual presence and interpersonal skills with
+              your personal and professional brand goals.
+            </p>
+          </div>
+
+          <div class="relative z-10 border border-white/5 bg-base-950 p-10 transition-colors hover:border-gold/30">
+            <div class="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-full border border-white/5 bg-base-900 font-serif text-2xl text-gold md:mx-0">
+              III
+            </div>
+            <h4 class="mb-4 text-center font-serif text-xl text-white md:text-left">Refinement and Execution</h4>
+            <p class="text-center text-sm font-light leading-relaxed text-white/50 md:text-left">
+              Through guided sessions and practical assignments, we help you embody your upgraded
+              presence with confidence and consistency.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-14 overflow-hidden border border-white/10 bg-base-950 p-2">
+          <img
+            src="assets/methodology-session.jpeg"
+            alt="Methodology training session with participants"
+            class="h-auto w-full object-contain"
+            loading="lazy"
+          />
+          <p class="px-3 pb-2 pt-3 text-center text-xs uppercase tracking-[0.18em] text-gold/80">
+            coaching the finalists of Mrs India 2019
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="relative overflow-hidden bg-base-950 py-32">
+      <div class="absolute right-0 top-0 h-[800px] w-[800px] translate-x-1/3 -translate-y-1/2 rounded-full bg-gold/5 blur-[120px]"></div>
+
+      <div class="relative z-10 mx-auto max-w-[92rem] px-3 md:px-8">
+        <div class="mb-16 flex items-center justify-center gap-4">
+          <div class="h-px w-12 bg-gold"></div>
+          <span class="text-xs font-medium uppercase tracking-widest text-gold">Client Success</span>
+          <div class="h-px w-12 bg-gold"></div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="marquee">
+            <div class="marquee-track">
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Puja-Choudhary-150x150.jpg" alt="Puja Choudhary" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Puja Choudhary</p><p class="text-xs text-gold">Sr. Business Analyst</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"Thank you for making it easy and interesting, and helping me understand what fashion and presence really mean."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Rupinder-Arora-150x150.jpg" alt="Rupinder Arora" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Rupinder Arora</p><p class="text-xs text-gold">Communication Skills Trainer</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"Your teaching style was very unique. Loved your confidence and practical guidance."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Jyothsna-150x150.jpg" alt="Jyothsna" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Jyothsna</p><p class="text-xs text-gold">Corporate Trainer</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"Your training was energetic, informative and extremely effective."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Monica-Joshi-150x150.jpg" alt="Monica Joshi" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Monica Joshi</p><p class="text-xs text-gold">WFM Professional</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"Very helpful session, made a big difference and will help me long-term in styling myself."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Deepika-Batra-150x150.jpg" alt="Deepika Batra" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Deepika Batra</p><p class="text-xs text-gold">Teacher</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"Great learning experience. Loved the patience with which every question was answered."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Sheefu-Mehra-150x150.jpg" alt="Sheefu Mehra" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Sheefu Mehra</p><p class="text-xs text-gold">HR Professional</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"We learnt a lot about body language, styling and voice modulation."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Moomal-Bowes-150x150.jpg" alt="Moomal Bowes" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Moomal Bowes</p><p class="text-xs text-gold">Home Maker</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"You are a wonderful person with a great aura. It was a great learning experience."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Alisha-Tuli-150x150.jpg" alt="Alisha Tuli" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Alisha Tuli</p><p class="text-xs text-gold">Faridabad</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"Interactive and informative session with lots of eye-openers."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Preeti-Seth-150x150.jpg" alt="Preeti Seth" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Preeti Seth</p><p class="text-xs text-gold">Pune</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"Thank you for making me feel like a Queen and boosting my confidence."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Rida-Choudhry-150x150.jpg" alt="Rida Choudhry" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Rida Choudhry</p><p class="text-xs text-gold">BDM, Tata Communication</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"Very useful tips that will help me to make my mark in life."</p></article>
+
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Puja-Choudhary-150x150.jpg" alt="Puja Choudhary" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Puja Choudhary</p><p class="text-xs text-gold">Sr. Business Analyst</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"Thank you for making it easy and interesting, and helping me understand what fashion and presence really mean."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Rupinder-Arora-150x150.jpg" alt="Rupinder Arora" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Rupinder Arora</p><p class="text-xs text-gold">Communication Skills Trainer</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"Your teaching style was very unique. Loved your confidence and practical guidance."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Jyothsna-150x150.jpg" alt="Jyothsna" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Jyothsna</p><p class="text-xs text-gold">Corporate Trainer</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"Your training was energetic, informative and extremely effective."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Monica-Joshi-150x150.jpg" alt="Monica Joshi" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Monica Joshi</p><p class="text-xs text-gold">WFM Professional</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"Very helpful session, made a big difference and will help me long-term in styling myself."</p></article>
+            </div>
+          </div>
+
+          <div class="marquee">
+            <div class="marquee-track reverse">
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Parul-Agarwal-150x150.jpg" alt="Parul Agarwal" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Parul Agarwal</p><p class="text-xs text-gold">Theatre Artist</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"You involved everyone in the session and took great care to clarify all doubts."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Rachana-S-Athare-150x150.jpg" alt="Rachana S. Athare" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Rachana S. Athare</p><p class="text-xs text-gold">Interior Designer</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"Such a great job. The session was very satisfactory and relaxing."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Leena-Jethani-150x150.jpg" alt="Leeva Khaderia" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Leeva Khaderia</p><p class="text-xs text-gold">Visa Consultant</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"What we learn we earn, and today I learned like never before."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Mamta-Patil-150x150.jpg" alt="Mamta Patil" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Mamta Patil</p><p class="text-xs text-gold">Mumbai</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"The session was full of energy and confidence. Best trainer I have met."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Rajbir-Randhawa-150x150.jpg" alt="Dr. Rajbir Randhawa" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Dr. Rajbir Randhawa</p><p class="text-xs text-gold">Surgeon</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"Thank you, vivacious Jyotika. Your energetic aura gave us positive energy and growth."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Riti-Saini-150x150.jpg" alt="Riti Saini" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Riti Saini</p><p class="text-xs text-gold">Educationist</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"I want to make you my icon. Thanks for making me aware how little things matter."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Nidhi-Bhardwaj-150x150.jpg" alt="Nidhi Bhardwaj" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Nidhi Bhardwaj</p><p class="text-xs text-gold">Make Up Artist</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"I am in love with Jyotika maam's personality. You are such a warm person."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Princy-Randhawa-150x150.jpg" alt="Princy Randhawa" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Princy Randhawa</p><p class="text-xs text-gold">Assistant Professor</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"A lot was covered, and every minute was useful. Truly inspiring."</p></article>
+
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Parul-Agarwal-150x150.jpg" alt="Parul Agarwal" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Parul Agarwal</p><p class="text-xs text-gold">Theatre Artist</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"You involved everyone in the session and took great care to clarify all doubts."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Rachana-S-Athare-150x150.jpg" alt="Rachana S. Athare" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Rachana S. Athare</p><p class="text-xs text-gold">Interior Designer</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"Such a great job. The session was very satisfactory and relaxing."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Leena-Jethani-150x150.jpg" alt="Leeva Khaderia" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Leeva Khaderia</p><p class="text-xs text-gold">Visa Consultant</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"What we learn we earn, and today I learned like never before."</p></article>
+              <article class="w-[22rem] shrink-0 border border-white/10 bg-base-900/70 p-6 backdrop-blur-sm"><div class="mb-4 flex items-center gap-3"><img src="https://makeyourmark.in/wp-content/uploads/2019/01/Mamta-Patil-150x150.jpg" alt="Mamta Patil" class="h-14 w-14 rounded-full border border-gold/40 object-cover" loading="lazy"><div><p class="text-sm font-medium text-white">Mamta Patil</p><p class="text-xs text-gold">Mumbai</p></div></div><p class="text-sm font-light leading-relaxed text-white/80">"The session was full of energy and confidence. Best trainer I have met."</p></article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="border-t border-base-900/10 bg-base-100 py-32 text-base-950">
+      <div class="mx-auto max-w-4xl px-6 text-center">
+        <h2 class="mb-8 font-serif text-5xl md:text-6xl">Ready to Step Into Your Power?</h2>
+        <p class="mx-auto mb-12 max-w-2xl text-lg font-light text-base-950/60">
+          Schedule a confidential discovery consultation to discuss your objectives and learn how our
+          bespoke services can elevate your trajectory.
+        </p>
+        <div class="flex flex-col justify-center gap-6 sm:flex-row">
+          <a href="https://wa.me/919810241116?text=Hello%20Jyotika%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer" class="bg-base-950 px-10 py-5 text-xs font-semibold uppercase tracking-widest text-white transition-colors duration-300 hover:bg-gold">
+            Request Consultation
+          </a>
+          <a href="tel:+919289396660" class="border border-base-950 px-10 py-5 text-xs font-semibold uppercase tracking-widest text-base-950 transition-colors duration-300 hover:bg-base-950 hover:text-white">
+            Call +91 92893 96660
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-white/5 bg-base-950 pb-12 pt-24">
+      <div class="mx-auto max-w-7xl px-6 md:px-12">
+        <div class="mb-20 grid grid-cols-1 gap-12 md:grid-cols-4">
+          <div class="md:col-span-2">
+            <a href="#" class="mb-6 flex items-center gap-3">
+              <img
+                src="assets/logo.png"
+                alt="Make Your Mark logo"
+                class="h-14 w-auto max-w-[220px] shrink-0 object-contain"
+                loading="lazy"
+              />
+              <span class="font-serif text-2xl tracking-wide text-white">Make Your Mark</span>
+            </a>
+            <p class="mb-8 max-w-sm text-sm font-light leading-relaxed text-white/40">
+              Premium image consulting and soft skills coaching for ambitious individuals ready to
+              elevate confidence, communication, and presence.
+            </p>
+          </div>
+
+          <div>
+            <h6 class="mb-6 text-xs font-semibold uppercase tracking-widest text-white">Explore</h6>
+            <ul class="space-y-4">
+              <li><a href="#philosophy" class="text-sm text-white/50 transition-colors hover:text-white">Philosophy</a></li>
+              <li><a href="#services" class="text-sm text-white/50 transition-colors hover:text-white">Services</a></li>
+              <li><a href="#testimonials" class="text-sm text-white/50 transition-colors hover:text-white">Client Success</a></li>
+              <li><a href="#booking" class="text-sm text-white/50 transition-colors hover:text-white">Booking</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h6 class="mb-6 text-xs font-semibold uppercase tracking-widest text-white">Contact</h6>
+            <ul class="space-y-4">
+              <li class="text-sm text-white/50">M-12 Lajpat Nagar III, New Delhi, India</li>
+              <li><a href="mailto:jyotika@makeyourmark.in" class="text-sm text-white/50 transition-colors hover:text-white">jyotika@makeyourmark.in</a></li>
+              <li><a href="tel:+919289396660" class="text-sm text-white/50 transition-colors hover:text-white">+91 92893 96660</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 md:flex-row">
+          <p class="text-xs text-white/30">© 2026 Make Your Mark. All rights reserved.</p>
+          <div class="flex gap-6">
+            <a href="#" class="text-xs text-white/30 transition-colors hover:text-white">Privacy Policy</a>
+            <a href="#" class="text-xs text-white/30 transition-colors hover:text-white">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
