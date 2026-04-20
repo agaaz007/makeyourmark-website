@@ -113,7 +113,7 @@ if (eventsTimeline && rawEventsData.length) {
     const hero = heroImage
       ? `
         <div class="mb-4 overflow-hidden border border-white/10 bg-base-900">
-          <img src="${heroImage}" alt="${event.title}" class="h-[18rem] w-full object-cover md:h-[24rem]" loading="${index < 2 ? "eager" : "lazy"}" />
+          <img src="${heroImage}" alt="${event.title}" class="h-[18rem] w-full object-cover md:h-[24rem]" loading="${index < 2 ? "eager" : "lazy"}" referrerpolicy="no-referrer" />
         </div>
       `
       : "";
@@ -130,6 +130,7 @@ if (eventsTimeline && rawEventsData.length) {
                   alt="${event.title} image ${imgIndex + 2}"
                   class="h-28 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
+                  referrerpolicy="no-referrer"
                 />
               </a>
             `
