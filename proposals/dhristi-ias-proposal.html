@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Make Your Mark — Proposal for Drishti IAS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gold: #C5A059;
+        --gold-dark: #A68444;
+        --gold-light: #E2C281;
+        --dark: #0A0A0A;
+        --dark-800: #1A1A1A;
+        --dark-700: #252525;
+        --cream: #FDFBF7;
+        --white: #FFFFFF;
+        --text-muted: rgba(255,255,255,0.55);
+        --text-body: rgba(255,255,255,0.78);
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        background: #111;
+        font-family: 'Inter', sans-serif;
+        color: var(--white);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .page {
+        width: 210mm;
+        height: 297mm;
+        margin: 0 auto;
+        background: var(--dark);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .page-1 {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+      }
+      .page-2 { padding: 32px 48px 40px; }
+
+      /* --- PAGE 1: Cover --- */
+      .cover-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 32px 48px;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .logo-group {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .logo-group img {
+        height: 44px;
+        width: auto;
+        object-fit: contain;
+      }
+
+      .logo-group span {
+        font-family: 'Playfair Display', serif;
+        font-size: 18px;
+        letter-spacing: 0.03em;
+        color: var(--white);
+      }
+
+      .header-meta {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--gold);
+        font-weight: 600;
+      }
+
+      .cover-body {
+        padding: 48px 48px 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .accent-line {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .accent-line::before {
+        content: '';
+        display: block;
+        width: 36px;
+        height: 1px;
+        background: var(--gold);
+      }
+
+      .accent-line span {
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--gold);
+      }
+
+      .cover-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 42px;
+        line-height: 1.12;
+        font-weight: 500;
+        color: var(--white);
+        max-width: 520px;
+      }
+
+      .cover-title em {
+        color: var(--gold-light);
+        font-style: italic;
+      }
+
+      .cover-subtitle {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.7;
+        color: var(--text-body);
+        max-width: 480px;
+      }
+
+      .cover-recipient {
+        margin-top: 16px;
+        padding: 28px 32px;
+        background: var(--dark-800);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-left: 3px solid var(--gold);
+      }
+
+      .cover-recipient .label {
+        font-size: 9px;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--gold);
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .cover-recipient .name {
+        font-family: 'Playfair Display', serif;
+        font-size: 22px;
+        color: var(--white);
+        margin-bottom: 4px;
+      }
+
+      .cover-recipient .role {
+        font-size: 13px;
+        color: var(--text-muted);
+        font-weight: 400;
+      }
+
+      .cover-image-strip {
+        margin-top: auto;
+        width: 100%;
+        flex: 1 1 0;
+        min-height: 200px;
+        position: relative;
+        overflow: hidden;
+        background: var(--dark-800);
+      }
+
+      .cover-image-strip img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 30%;
+        opacity: 0.7;
+      }
+
+      .cover-image-strip::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, var(--dark) 0%, rgba(10,10,10,0) 35%, rgba(10,10,10,0.4) 100%);
+      }
+
+      .cover-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 16px 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 2;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        background: rgba(10,10,10,0.7);
+        backdrop-filter: blur(8px);
+      }
+
+      .cover-footer span {
+        font-size: 10px;
+        color: var(--text-muted);
+        letter-spacing: 0.08em;
+      }
+
+      .cover-footer .gold { color: var(--gold); }
+
+      /* --- PAGE 2: Letter body --- */
+      .letter-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 18px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        margin-bottom: 24px;
+      }
+
+      .letter-header .logo-group img { height: 32px; }
+      .letter-header .logo-group span { font-size: 14px; }
+
+      .page-num {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--gold);
+        font-weight: 600;
+      }
+
+      .salutation {
+        font-family: 'Playfair Display', serif;
+        font-size: 18px;
+        color: var(--white);
+        margin-bottom: 18px;
+      }
+
+      .body-text {
+        font-size: 12.5px;
+        line-height: 1.75;
+        color: var(--text-body);
+        font-weight: 300;
+        margin-bottom: 14px;
+      }
+
+      .body-text strong {
+        color: var(--white);
+        font-weight: 500;
+      }
+
+      .highlight-block {
+        margin: 16px 0;
+        padding: 16px 22px;
+        background: var(--dark-800);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-left: 3px solid var(--gold);
+      }
+
+      .highlight-block p {
+        font-family: 'Playfair Display', serif;
+        font-size: 14px;
+        line-height: 1.5;
+        color: var(--cream);
+        font-style: italic;
+      }
+
+      .highlight-block p em {
+        color: var(--gold-light);
+        font-style: normal;
+        font-weight: 600;
+      }
+
+      .workshop-section {
+        margin: 18px 0 16px;
+      }
+
+      .workshop-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--gold);
+        font-weight: 600;
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .workshop-label::before {
+        content: '';
+        width: 28px;
+        height: 1px;
+        background: var(--gold);
+      }
+
+      .workshop-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 7px;
+      }
+
+      .workshop-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px 12px;
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.05);
+        transition: border-color 0.2s;
+      }
+
+      .workshop-item:hover {
+        border-color: rgba(197,160,89,0.3);
+      }
+
+      .workshop-icon {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1px;
+      }
+
+      .workshop-icon svg {
+        width: 11px;
+        height: 11px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 2.5;
+      }
+
+      .workshop-item span {
+        font-size: 11.5px;
+        color: var(--text-body);
+        line-height: 1.4;
+        font-weight: 400;
+      }
+
+      .workshop-item span strong {
+        color: var(--white);
+        font-weight: 500;
+      }
+
+      .closing-section {
+        margin-top: 16px;
+      }
+
+      .closing-section .body-text:last-of-type {
+        margin-bottom: 16px;
+      }
+
+      .signature-block {
+        margin-top: 8px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 24px;
+        align-items: end;
+      }
+
+      .sig-name {
+        font-family: 'Playfair Display', serif;
+        font-size: 18px;
+        color: var(--white);
+        margin-bottom: 3px;
+      }
+
+      .sig-title {
+        font-size: 11px;
+        color: var(--gold);
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        margin-bottom: 2px;
+      }
+
+      .sig-credentials {
+        font-size: 10px;
+        color: var(--text-muted);
+        font-weight: 400;
+        margin-bottom: 8px;
+      }
+
+      .sig-contact {
+        display: flex;
+        gap: 24px;
+      }
+
+      .sig-contact a {
+        font-size: 11px;
+        color: var(--text-muted);
+        text-decoration: none;
+        letter-spacing: 0.02em;
+        transition: color 0.2s;
+      }
+
+      .sig-contact a:hover {
+        color: var(--gold);
+      }
+
+      .sig-logo {
+        opacity: 0.15;
+        height: 50px;
+        width: auto;
+      }
+
+      .letter-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 12px 48px;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid rgba(255,255,255,0.06);
+        font-size: 9px;
+        color: rgba(255,255,255,0.25);
+        letter-spacing: 0.06em;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        html, body {
+          width: 210mm;
+          margin: 0;
+          padding: 0;
+          background: var(--dark);
+        }
+        .page {
+          width: 210mm;
+          height: 297mm;
+          page-break-after: always;
+          margin: 0;
+          box-shadow: none;
+          overflow: hidden;
+        }
+        .page:last-child { page-break-after: auto; }
+      }
+
+      @media screen {
+        body { padding: 24px 0; }
+        .page {
+          box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+          margin-bottom: 32px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- PAGE 1: Cover -->
+    <div class="page page-1">
+      <div class="cover-header">
+        <div class="logo-group">
+          <img src="../assets/logo.png" alt="Make Your Mark logo" />
+          <span>Make Your Mark</span>
+        </div>
+        <div class="header-meta">Collaboration Proposal</div>
+      </div>
+
+      <div class="cover-body">
+        <div class="accent-line"><span>Strategic Partnership</span></div>
+
+        <h1 class="cover-title">
+          Empowering IAS Aspirants with <em>Presence, Poise &amp; Personality</em>
+        </h1>
+
+        <p class="cover-subtitle">
+          A bespoke soft skills and image management program designed to complement
+          academic excellence — preparing future civil servants not just for examinations,
+          but for the leadership roles that follow.
+        </p>
+
+        <div class="cover-recipient">
+          <div class="label">Presented To</div>
+          <div class="name">Dr. Vikas Divyakirti Ji</div>
+          <div class="role">Founder &amp; Managing Director, Drishti IAS Coaching Centre</div>
+        </div>
+      </div>
+
+      <div class="cover-image-strip">
+        <img src="../assets/image-consulting.png" alt="Jyotika Singhal conducting a training session" />
+      </div>
+
+      <div class="cover-footer">
+        <span>www.makeyourmark.in</span>
+        <span class="gold">Confidential</span>
+        <span>April 2026</span>
+      </div>
+    </div>
+
+    <!-- PAGE 2: Letter body -->
+    <div class="page page-2">
+      <div class="letter-header">
+        <div class="logo-group">
+          <img src="../assets/logo.png" alt="Make Your Mark logo" />
+          <span>Make Your Mark</span>
+        </div>
+        <div class="page-num">Page 02</div>
+      </div>
+
+      <div class="salutation">Dear Dr. Vikas Divyakirti Ji,</div>
+
+      <p class="body-text">
+        I hope you are doing well. It is truly inspiring to see the scale and impact your esteemed
+        organization has created in shaping the journeys of IAS aspirants across India. Your
+        commitment to academic excellence has set a remarkable benchmark in the industry.
+      </p>
+
+      <p class="body-text">
+        I am <strong>Jyotika Singhal</strong>, Founder &amp; CEO of <strong>Make Your Mark</strong>,
+        where we focus on Soft Skills Training and Image Management. I am reaching out with a
+        collaborative idea that can further strengthen your students' preparedness — not just for
+        examinations, but for the personality-driven stages of their journey and beyond.
+      </p>
+
+      <div class="highlight-block">
+        <p>
+          While knowledge builds competence, it is <em>confidence</em>, <em>communication</em>,
+          and <em>presence</em> that ultimately set candidates apart — especially during interviews
+          and leadership roles in public service.
+        </p>
+      </div>
+
+      <p class="body-text">
+        With over <strong>10+ years of experience</strong> as an internationally certified Image Consultant,
+        Soft Skills Trainer, <strong>Mrs. India 2015</strong>, and a theatre artist, I have worked
+        extensively on helping individuals translate their potential into impactful presence.
+      </p>
+
+      <div class="workshop-section">
+        <div class="workshop-label">Workshop Focus Areas for IAS Aspirants</div>
+        <div class="workshop-grid">
+          <div class="workshop-item">
+            <div class="workshop-icon"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span><strong>Effective Communication</strong> &amp; Commanding Body Language</span>
+          </div>
+          <div class="workshop-item">
+            <div class="workshop-icon"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span><strong>Personal Presence</strong> &amp; First Impressions</span>
+          </div>
+          <div class="workshop-item">
+            <div class="workshop-icon"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span><strong>Emotional Intelligence</strong> &amp; Decision-Making</span>
+          </div>
+          <div class="workshop-item">
+            <div class="workshop-icon"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span><strong>Stress &amp; Time</strong> Management</span>
+          </div>
+          <div class="workshop-item">
+            <div class="workshop-icon"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span><strong>Leadership</strong> &amp; Public Interaction Skills</span>
+          </div>
+          <div class="workshop-item">
+            <div class="workshop-icon"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span><strong>Interview Readiness</strong> &amp; Personality Development</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="closing-section">
+        <p class="body-text">
+          These sessions are designed to seamlessly complement your academic ecosystem, ensuring
+          students not only perform well in exams but also present themselves with clarity,
+          confidence, and credibility.
+        </p>
+        <p class="body-text">
+          I would be honoured to explore how we can collaborate across your centres and create a
+          meaningful impact at scale. The program can be fully customized to align with your
+          existing structure and student needs.
+        </p>
+        <p class="body-text">
+          Looking forward to the possibility of working together to further empower your students
+          to truly stand out.
+        </p>
+      </div>
+
+      <div class="signature-block">
+        <div>
+          <div style="font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 8px;">Warm regards,</div>
+          <div class="sig-name">Jyotika Singhal</div>
+          <div class="sig-title">Founder &amp; CEO | Make Your Mark</div>
+          <div class="sig-credentials">Mrs. India 2015 &nbsp;|&nbsp; Actor &nbsp;|&nbsp; Theatre Artist</div>
+          <div class="sig-contact">
+            <a href="tel:+919289396660">(+91) 92893 96660</a>
+            <a href="mailto:jyotika@makeyourmark.in">jyotika@makeyourmark.in</a>
+          </div>
+        </div>
+        <img src="../assets/logo.png" alt="" class="sig-logo" />
+      </div>
+
+      <div class="letter-footer">
+        <span>Make Your Mark &nbsp;&bull;&nbsp; www.makeyourmark.in</span>
+        <span>&copy; 2026 Make Your Mark. All rights reserved.</span>
+      </div>
+    </div>
+
+  </body>
+</html>
