@@ -112,9 +112,9 @@ if (eventsTimeline && rawEventsData.length) {
 
     const hero = heroImage
       ? `
-        <div class="mb-4 overflow-hidden border border-white/10 bg-base-900">
-          <img src="${heroImage}" alt="${event.title}" class="h-[18rem] w-full object-cover md:h-[24rem]" loading="${index < 2 ? "eager" : "lazy"}" referrerpolicy="no-referrer" />
-        </div>
+        <a href="${heroImage}" target="_blank" rel="noopener noreferrer" class="mb-4 flex items-center justify-center overflow-hidden border border-white/10 bg-base-900">
+          <img src="${heroImage}" alt="${event.title}" class="max-h-[28rem] w-auto max-w-full object-contain md:max-h-[34rem]" loading="${index < 2 ? "eager" : "lazy"}" referrerpolicy="no-referrer" />
+        </a>
       `
       : "";
 
@@ -124,11 +124,11 @@ if (eventsTimeline && rawEventsData.length) {
           ${galleryImages
             .map(
               (imgUrl, imgIndex) => `
-              <a href="${imgUrl}" target="_blank" rel="noopener noreferrer" class="group block overflow-hidden border border-white/10 bg-base-900">
+              <a href="${imgUrl}" target="_blank" rel="noopener noreferrer" class="group flex aspect-square items-center justify-center overflow-hidden border border-white/10 bg-base-900">
                 <img
                   src="${imgUrl}"
                   alt="${event.title} image ${imgIndex + 2}"
-                  class="h-28 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  class="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.03]"
                   loading="lazy"
                   referrerpolicy="no-referrer"
                 />
